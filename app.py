@@ -9,7 +9,7 @@ app.logger.setLevel(logging.INFO)
 
 @app.route("/")
 def home():
-    visitor_ip = request.remote_addr
+    visitor_ip = request.headers.get("CF-Connecting-IP", "unavailable")
     visit_time = datetime.now(timezone.utc).isoformat()
 
     app.logger.info(
