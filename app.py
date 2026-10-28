@@ -3,6 +3,10 @@ from datetime import datetime, timezone
 
 app = Flask(__name__)
 
+import logging
+
+app.logger.setLevel(logging.INFO)
+
 @app.route("/")
 def home():
     visitor_ip = request.remote_addr
