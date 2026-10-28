@@ -1,4 +1,3 @@
-```python
 from flask import Flask, request, redirect
 from datetime import datetime, timezone
 
@@ -6,11 +5,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    # Record the connection IP and visit time when the homepage opens.
     visitor_ip = request.remote_addr
     visit_time = datetime.now(timezone.utc).isoformat()
 
-    # Print the visit record in Render's service logs.
     app.logger.info(
         "Homepage visit: ip=%s time=%s",
         visitor_ip,
@@ -24,19 +21,14 @@ def home():
         <title>Visitor Redirect Demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body style="font-family: Arial; max-width: 600px;
-                 margin: 60px auto; padding: 20px;">
-
+    <body style="font-family: Arial; max-width: 600px; margin: 60px auto; padding: 20px;">
         <h1>Welcome</h1>
-
         <p>
-            Redirecting to Chime.
+            Redirecting to Chime
         </p>
-
         <button onclick="location.href='/continue'">
             Continue to Chime
         </button>
-
     </body>
     </html>
     """
@@ -47,4 +39,3 @@ def continue_to_site():
 
 if __name__ == "__main__":
     app.run()
-```
