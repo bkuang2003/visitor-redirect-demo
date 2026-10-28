@@ -30,8 +30,7 @@ def home():
         <h1>Welcome</h1>
 
         <p>
-            For website diagnostics, this site records your connection
-            IP address and visit time when you open this page.
+            Redirecting to Chime.
         </p>
 
         <button onclick="location.href='/continue'">
